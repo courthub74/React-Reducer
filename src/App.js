@@ -31,27 +31,27 @@ export default function App() {
   // const [count, useCount] = useState({
   //   count: 1
   // })
-  const [state, dispatcher] = useReducer(reducer, { count: 0 });
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
   return (
     <div>
       Count {state.count}
       <button
         onClick={() => {
-          console.log('increment');
+          dispatch({ type: 'increment' });
         }}
       >
         Increment +
       </button>
       <button
         onClick={() => {
-          console.log('decrement');
+          dispatch({ type: 'decrement' });
         }}
       >
         Decrement -
       </button>
       <button
         onClick={() => {
-          console.log('reset');
+          dispatch('reset');
         }}
       >
         Reset
